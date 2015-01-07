@@ -119,8 +119,8 @@ if __name__ == "__main__":
         print("N should be from 0 to {}".format(MAX_N))
         sys.exit(0)
     print("Results:")
-    print("pi_from_math -- {}".format(pi_from_math(N)))
-    print("pi_from_1000 -- {}".format(pi_from_1000(N)))
+    print("pi_from_math ------- {}".format(pi_from_math(N)))
+    print("pi_from_1000 ------- {}".format(pi_from_1000(N)))
     print("pi_from_generator -- {}".format(pi_from_generator(N)))
 
 

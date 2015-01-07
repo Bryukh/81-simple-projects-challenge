@@ -43,6 +43,13 @@ class TestPiFrom1000(BaseTests.TestPi):
                           "058209749445923078164062862089986280348253421170680", self.pi_function(Pi.MAX_N))
 
 
+class TestPiFromGenerator(TestPiFrom1000):
+    def setUp(self):
+        self.pi_function = Pi.pi_from_generator
+
+
+
+
 
 
 

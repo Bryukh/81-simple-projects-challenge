@@ -65,6 +65,45 @@ def pi_from_1000(n=15):
     return format(Decimal(PI1000), ".{}f".format(n))
 
 
+def pi_generator():
+    """
+    Taken from http://rosettacode.org/wiki/Pi#Python
+    Based on
+    http://www.cs.ox.ac.uk/people/jeremy.gibbons/publications/spigot.pdf
+    """
+    q, r, t, k, n, l = 1, 0, 1, 1, 3, 3
+    while True:
+        if 4 * q + r - t < n * t:
+            yield n
+            nr = 10 * (r - n * t)
+            n = ((10 * (3 * q + r)) // t) - 10 * n
+            q *= 10
+            r = nr
+        else:
+            nr = (2 * q + r) * l
+            nn = (q * (7 * k) + 2 + (r * l)) // (t * l)
+            q *= k
+            t *= l
+            l += 2
+            k += 1
+            n = nn
+            r = nr
+
+
+def pi_from_generator(n=15):
+    """
+    Spigot algorithm by Jeremy Gibbons.
+    :param n: how many decimal places after dot.
+    :return: PI number (string representation) with the given precision.
+    """
+    if not n:
+        return "3"
+    from decimal import Decimal
+    gen = pi_generator()
+    next(gen)
+    return format(Decimal("3." + "".join(str(next(gen)) for i in range(n + 1))), ".{}f".format(n))
+
+
 if __name__ == "__main__":
     if len(sys.argv) >= 2:
         str_N = int(sys.argv[1])
@@ -82,5 +121,6 @@ if __name__ == "__main__":
     print("Results:")
     print("pi_from_math -- {}".format(pi_from_math(N)))
     print("pi_from_1000 -- {}".format(pi_from_1000(N)))
+    print("pi_from_generator -- {}".format(pi_from_generator(N)))
 
 

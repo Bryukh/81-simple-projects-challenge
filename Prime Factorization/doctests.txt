@@ -1,0 +1,30 @@
+Setup
+-----
+
+>>> from prime_factorization import *
+
+Enumerate
+---------
+>>> enumerate_method(2)
+[2]
+>>> enumerate_method(8)
+[2, 2, 2]
+>>> enumerate_method(17)
+[17]
+>>> enumerate_method(2*3*5*7*11*13)
+[2, 3, 5, 7, 11, 13]
+>>> enumerate_method(1000)
+[2, 2, 2, 5, 5, 5]
+
+Pollard's rho
+-------------
+>>> pollard_method(2)
+[2]
+>>> pollard_method(8)
+[2, 2, 2]
+>>> pollard_method(17)
+[17]
+>>> pollard_method(2*3*5*7*11*13)
+[2, 3, 5, 7, 11, 13]
+>>> pollard_method(1000)
+[2, 2, 2, 5, 5, 5]

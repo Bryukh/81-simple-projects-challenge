@@ -6,6 +6,10 @@ Prime Factorization –
 
 import sys
 import timeit
+from random import randint
+from fractions import gcd
+
+POLLARD_S = 5
 
 
 def enumerate_method(n: int) -> list:
@@ -22,38 +26,48 @@ def enumerate_method(n: int) -> list:
     return factors
 
 
-def pollard_method(n):
+def pollard_rho(n):
+    if not n % 2:
+        return 2
+    x = randint(2, n - 1)
+    y = x
+    c = randint(2, n - 1)
+    d = 1
+    gf = lambda i: (i ** 2 + c) % n
+    while d == 1:
+        x = gf(x)
+        y = gf(gf(y))
+        d = gcd(abs(x - y), n)
+    return d
+
+
+def pollard_method(init_n):
     """
     Pollard's rho algorithm
     http://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm
     """
-    # just a stub and I've gone to sleep.
-    # will see tomorrow
-    return enumerate_method(n)
-#     from fractions import gcd
-#     from random import randint
-#     d = 0
-#     gf = lambda i, k: (i ** 2 + 1) % k
-#     factors = []
-#     while n != 1:
-#         x = randint(2, n - 1)
-#         y = randint(2, n - 1)
-#         d = 1 + bool(not n % 2)
-#         while d == 1:
-#             x = gf(x, n)
-#             y = gf(gf(y, n), n)
-#             if not (x - y):
-#                 x = randint(2, n - 1)
-#                 y = randint(2, n - 1)
-#             else:
-#                 d = gcd(abs(x - y), n)
-#         factors.append(d)
-#         n //= d
-#     return factors
+    factors = []
+    stack = [init_n]
+    while stack:
+        n = stack.pop()
+        d = pollard_rho(n)
+        if d == n:
+            s = 0
+            while s < POLLARD_S and d == n:
+                d = pollard_rho(n)
+                s += 1
+            if d == n:
+                factors.append(d)
+                continue
+        stack.append(d)
+        stack.append(n // d)
+    return sorted(factors)
+
 
 METHODS = [
+    "pollard_method",
     "enumerate_method",
-    "pollard_method"
+
 ]
 
 if __name__ == "__main__":
@@ -62,7 +76,7 @@ if __name__ == "__main__":
     if not str_number:
         import doctest
 
-        doctest.testfile("doctests.txt")
+        doctest.testfile("doctests.txt", verbose=True)
         sys.exit(2)
     try:
         number = int(str_number)
@@ -72,8 +86,9 @@ if __name__ == "__main__":
     if number < 1:
         print("A number should be great than 1")
         sys.exit(0)
-    print("Time Results:")
+    print("Results:")
     for method in METHODS:
-        print("{} - {}".format(method,
-                               timeit.timeit("{}({})".format(method, number),
-                                             "from __main__ import {}".format(method), number=1)))
+        print(method)
+        print(globals()[method](number))
+        print(timeit.timeit("{}({})".format(method, number),
+                            "from __main__ import {}".format(method), number=1), "s")

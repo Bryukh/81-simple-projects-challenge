@@ -25,15 +25,17 @@ function main() {
     if (process.argv[2]) {
         N = parseInt(process.argv[2], 10);
         Pi = findPi(parseInt(N));
+        console.log("Pi = ", Pi);
     }
     else {
         console.log("Enter a number of decimal places for PI:");
         rl.on('line', function (cmd) {
             Pi = findPi(parseInt(cmd));
+            console.log("Pi = ", Pi);
             process.exit(0);
         });
     }
-    console.log("Pi = ", Pi);
+
 }
 
 

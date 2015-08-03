@@ -20,19 +20,20 @@
 function main() {
     var readline = require('readline'),
         rl = readline.createInterface(process.stdin, process.stdout),
-        N;
+        N, Pi;
 
     if (process.argv[2]) {
         N = parseInt(process.argv[2], 10);
-        console.log(findPi(N));
+        Pi = findPi(parseInt(N));
     }
     else {
         console.log("Enter a number of decimal places for PI:");
         rl.on('line', function (cmd) {
-            console.log(findPi(parseInt(cmd)));
+            Pi = findPi(parseInt(cmd));
             process.exit(0);
         });
     }
+    console.log("Pi = ", Pi);
 }
 
 
@@ -52,7 +53,7 @@ function findPi(digits) {
         l = 3,
         nr, nn,
         step = 0;
-    while (step < digits) {
+    while (step <= digits) {
         if (4 * q + r - t < n * t) {
             result.push(n);
             nr = 10 * (r - n * t);
@@ -72,8 +73,10 @@ function findPi(digits) {
             r = nr;
         }
     }
-    return "Pi == 3." + result.slice(1).join("");
+    return "3." + result.slice(1).join("");
 }
+
+exports.findPi = findPi;
 
 if (require.main === module) {
     main();

@@ -1,0 +1,75 @@
+<html>
+<head>
+
+  <style>
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      display: block;
+      text-align: center;
+    }
+    .container {
+      width: 100%;
+    }
+    body {
+      font-family: monospace;
+    }
+    form *{
+      font-size: 20px;
+    }
+    form input {
+      width: 200px;
+      text-align: center;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+
+    form label {
+      width: 150px;
+      display: inline-block;
+    }
+    form input:disabled {
+      background-color: lightgrey;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="center">
+
+    <h2>Convert Binary <=> Decimal</h2>
+    <form>
+      <p>
+        <label>Binary:</label>
+        <input type="text" name="binary" value=10
+        onkeydown="var that = this;setTimeout(function(){checkAndConvertBinary(that, that.form.decimal)}, 1)">
+      </p>
+
+      <p>
+        <label>Decimal:</label>
+        <input type="text" name="decimal" value=2
+        onkeydown="var that = this;setTimeout(function(){checkAndConvertDecimal(that, that.form.binary)}, 1)">
+      </p>
+    </form>
+
+    </div>
+  </div>
+  <script>
+    function checkAndConvertBinary(input, target) {
+      var text = input.value;
+      text = text.replace(/[^10]/g, '');
+      input.value = text;
+      target.value = parseInt(text, 2);
+    }
+    function checkAndConvertDecimal(input, target) {
+      var text = input.value;
+      text = text.replace(/[^\d]/g, '');
+      input.value = text;
+      target.value = parseInt(text, 10).toString( 2);
+    }
+  </script>
+</body>
+</html>

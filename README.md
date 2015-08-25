@@ -128,7 +128,7 @@ These projects are divided in multiple categories, and each category has it’s 
 **Bulk Thumbnail Creator** - Picture processing can take a bit of time for some transformations. Especially if the image is large. Create an image program which can take hundreds of images and converts them to a specified size in the background thread while you do other things. For added complexity, have one thread handling re-sizing, have another bulk renaming of thumbnails etc.
 
 ##Web
- 
+
 **Page Scraper** - Create an application which connects to a site and pulls out all links, or images, and saves them to a list. Optional: Organize the indexed content and don’t allow duplicates. Have it put the results into an easily searchable index file.
 
 **Online White Board** - Create an application which allows you to draw pictures, write notes and use various colors to flesh out ideas for projects. Optional: Add feature to invite friends to collaborate on a white board online.
@@ -162,7 +162,7 @@ These projects are divided in multiple categories, and each category has it’s 
 **Code Snippet Manager** - Another utility program that allows coders to put in functions, classes or other tidbits to save for use later. Organized by the type of snippet or language the coder can quickly look up code. Optional: For extra practice try adding syntax highlighting based on the language.
 
 ##Databases
- 
+
 **SQL Query Analyzer** - A utility application which a user can enter a query and have it run against a local database and look for ways to make it more efficient.
 
 **Remote SQL Tool** - A utility that can execute queries on remote servers from your local computer across the Internet. It should take in a remote host, user name and password, run the query and return the results.
@@ -190,4 +190,3 @@ These projects are divided in multiple categories, and each category has it’s 
 ##Security
 
 **Caesar cipher** - Implement a Caesar cipher, both encoding and decoding. The key is an integer from 1 to 25. This cipher rotates the letters of the alphabet (A to Z). The encoding replaces each letter with the 1st to 25th next letter in the alphabet (wrapping Z to A). So key 2 encrypts “HI” to “JK”, but key 20 encrypts “HI” to “BC”. This simple “monoalphabetic substitution cipher” provides almost no security, because an attacker who has the encoded message can either use frequency analysis to guess the key, or just try all 25 keys.
-

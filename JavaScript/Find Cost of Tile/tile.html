@@ -1,0 +1,76 @@
+<html>
+<head>
+
+  <style>
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      display: block;
+      text-align: center;
+    }
+    .container {
+      width: 100%;
+    }
+    body {
+      font-family: monospace;
+    }
+    form *{
+      font-size: 20px;
+    }
+    form input {
+      width: 100px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+
+    form label {
+      width: 150px;
+      display: inline-block;
+    }
+    form input:disabled {
+      background-color: lightgrey;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="center">
+
+    <h2>Calculate cost of tiles</h2>
+    <form>
+      <p>
+        <label>Width:</label>
+        <input type="number" name="width" value="10" onkeydown="calculateArea(this.form)">
+      </p>
+
+      <p>
+        <label>Height:</label>
+        <input type="number" name="height" value=10 onkeydown="calculateArea(this.form)">
+      </p>
+
+      <p>
+        <label>Tile Cost:</label>
+        <input type="number" name="cost" value=1 onkeydown="calculateArea(this.form)">
+      </p>
+
+      <p>
+        <label><b>Total Cost:</b></label>
+        <input type="text" name="area" disabled="true" value=100>
+      </p>
+
+    </form>
+
+    </div>
+  </div>
+  <script>
+    function calculateArea(form) {
+      setTimeout(function() {
+        form.area.value = Number(form.height.value) * Number(form.width.value) * Number(form.cost.value);
+      }, 100);
+    }
+  </script>
+</body>
+</html>

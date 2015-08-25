@@ -14,7 +14,7 @@ exports.testEmpty = function (test) {
     test.deepEqual(primeFactors(1), [], "0");
     test.deepEqual(primeFactors(1), [], "-2");
     test.done();
-}
+};
 
 exports.testPrime = function (test) {
     test.expect(3);
@@ -22,4 +22,4 @@ exports.testPrime = function (test) {
     test.deepEqual(primeFactors(104729), [104729], "104729");
     test.deepEqual(primeFactors(2), [2], "2");
     test.done();
-}
+};

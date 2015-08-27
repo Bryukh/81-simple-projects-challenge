@@ -1,0 +1,56 @@
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+.container {
+    width: 100%;
+}
+body {
+    font-family: monospace;
+}
+form *{
+    font-size: 20px;
+}
+form input[type="number"] {
+    width: 90%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+form label {
+    display: inline-block;
+}
+
+form input:disabled {
+    background-color: lightgrey;
+}
+
+form button {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    min-width: 200px;
+    margin: 5px;
+    background-color: #9fa8a3;
+}
+
+#results table {
+    border-collapse: collapse;
+}
+
+#results td,
+#results th {
+    padding: 6px;
+}
+
+#results th {
+    background-color: #9fa8a3;
+}
+#results .even-row {
+    background-color: #c5d5cb;
+}

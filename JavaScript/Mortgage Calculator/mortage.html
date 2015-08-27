@@ -1,0 +1,57 @@
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="center">
+    <h2>Mortage Calculator</h2>
+    <form id="input-form">
+      <table class="center">
+        <tr>
+          <th>
+            <label>Total Sum</label>
+          </th>
+
+          <th>
+            <label>Duration (months)</label>
+          </th>
+
+          <th>
+            <label>Interest Rate (0-100%)</label>
+          </th>
+
+        </tr>
+
+        <tr>
+          <td>
+            <input type="number" name="sum" value="100000">
+          </td>
+          <td>
+            <input type="number" name="duration" value="60" min="1">
+          </td>
+          <td>
+            <input type="number" name="rate" value="10" min="0" max="100">
+          </td>
+
+        </tr>
+        <tr>
+          <td colspan="3">
+            <button type="button" id="calculate-btn">Calculate</button>
+          </td>
+        </tr>
+
+      </table>
+
+    </form>
+    <div class="center" id="results">
+
+    </div>
+
+
+    </div>
+  </div>
+  <script src="./mortage_table.js"></script>
+</body>
+</html>

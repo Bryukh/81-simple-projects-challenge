@@ -1,0 +1,12 @@
+{
+  "name": "simple calculator",
+  "version": "0.0.1",
+  "main": "calculator.html",
+  "window": {
+    "toolbar": false,
+    "width": 440,
+    "height": 650,
+    "min_width": 440,
+    "min_height": 650
+  }
+}

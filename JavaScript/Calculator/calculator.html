@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+
+    <form>
+      <table>
+        <tr>
+          <td colspan="4"> <input type="text" id="screen" disabled="true" value="0"> </td>
+        </tr>
+        <tr>
+          <td class="grey" id="bAC">
+            AC
+          </td>
+          <td class="grey" id="bPlusMinus">+/-</td>
+          <td class="grey" id="bPercent">%</td>
+          <td class="orange" id="bDiv">÷</td>
+        </tr>
+        <tr>
+          <td class="lightgrey" id="b7" data-value="7">7</td>
+          <td class="lightgrey" id="b8" data-value="8">8</td>
+          <td class="lightgrey" id="b9" data-value="9">9</td>
+          <td class="orange" id="bMult">×</td>
+        </tr>
+        <tr>
+          <td class="lightgrey" id="b4" data-value="3">4</td>
+          <td class="lightgrey" id="b5" data-value="5">5</td>
+          <td class="lightgrey" id="b6" data-value="6">6</td>
+          <td class="orange increased-text" id="bMinus">-</td>
+        </tr>
+        <tr>
+          <td class="lightgrey" id="b1" data-value="1">1</td>
+          <td class="lightgrey" id="b2" data-value="2">2</td>
+          <td class="lightgrey"id="b3" data-value="3">3</td>
+          <td class="orange increased-text" id="bPlus">+</td>
+        </tr>
+        <tr>
+          <td colspan="2"  class="lightgrey" id="b0" data-value="0">0</td>
+          <td class="lightgrey increased-text" id="bDot">.</td>
+          <td class="orange increased-text" id="bRes">=</td>
+        </tr>
+      </table>
+    </form>
+
+    <script src="./main.js"></script>.
+  </body>
+</html>

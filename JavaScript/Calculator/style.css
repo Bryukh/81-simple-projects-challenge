@@ -1,0 +1,50 @@
+@font-face {
+    font-family: CalcFont;
+    src: url(./digital.ttf);
+}
+
+body * {
+    font-family: CalcFont;
+}
+
+table {
+    /*width: 100%;*/
+    border-collapse: collapse;
+    margin: auto;
+}
+
+
+input {
+    width: 90%;
+    height: 90px;
+    font-size: 35px;
+    border: none;
+    text-align: right;
+}
+
+td {
+    border: 1px solid black;
+    padding: 0px;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+td.increased-text {
+    font-size: 60px;
+}
+
+.lightgrey {
+    background-color: #EEEEEE;
+}
+
+.grey {
+    background-color: #888888;
+}
+
+.orange {
+    background-color: #FFA300;
+}

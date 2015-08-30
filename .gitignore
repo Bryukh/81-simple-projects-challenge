@@ -8,6 +8,7 @@
 *.egg-info
 dist
 build
+node_modules
 eggs
 parts
 bin

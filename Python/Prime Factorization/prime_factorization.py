@@ -84,7 +84,7 @@ if __name__ == "__main__":
         print("A number should be an integer")
         sys.exit(0)
     if number < 1:
-        print("A number should be great than 1")
+        print("A number should be greater than 1")
         sys.exit(0)
     print("Results:")
     for method in METHODS:

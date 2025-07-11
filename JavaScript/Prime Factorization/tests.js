@@ -11,8 +11,8 @@ exports.testSimple = function(test) {
 exports.testEmpty = function (test) {
     test.expect(3);
     test.deepEqual(primeFactors(1), [], "1");
-    test.deepEqual(primeFactors(1), [], "0");
-    test.deepEqual(primeFactors(1), [], "-2");
+    test.deepEqual(primeFactors(0), [], "0");
+    test.deepEqual(primeFactors(-2), [], "-2");
     test.done();
 };
 

@@ -7,7 +7,7 @@ Prime Factorization –
 import sys
 import timeit
 from random import randint
-from fractions import gcd
+from math import gcd
 
 POLLARD_S = 5
 
